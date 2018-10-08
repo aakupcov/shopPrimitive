@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>by.anjei</groupId>
+  <artifactId>shop</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>shop maven webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <h2.version>1.4.197</h2.version>
+    <el.api.version>3.0.0</el.api.version>
+    <jsp.api.version>2.2</jsp.api.version>
+    <jstl.version>1.2</jstl.version>
+    <junit.version>4.11</junit.version>
+    <servlet.api.version>3.1.0</servlet.api.version>
+    <maven.jetty.version>6.1.10</maven.jetty.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>${servlet.api.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>${jstl.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.servlet.jsp</groupId>
+          <artifactId>jsp-api</artifactId>
+          <version>${jsp.api.version}</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.el</groupId>
+          <artifactId>javax.el-api</artifactId>
+          <version>${el.api.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>com.h2database</groupId>
+          <artifactId>h2</artifactId>
+          <version>${h2.version}</version>
+      </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>shop</finalName>
+      <plugins>
+          <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>maven-jetty-plugin</artifactId>
+              <version>${maven.jetty.version}</version>
+              <configuration>
+                  <scanIntervalSeconds>5</scanIntervalSeconds>
+              </configuration>
+          </plugin>
+      </plugins>
+  </build>
+</project>
